@@ -85,21 +85,21 @@
           </template>
           </b-table>
         </b-card>
-
       </b-card>
   </div>
 </template>
 
 <script>
-import _api from '../_api'
+// import _api from '../_api'
+import _countries from '../utils/countries'
 
 export default {
   data () {
     return {
       rota: [],
       form: {},
-      countries: [],
-      items: [],
+      countries: _countries,
+      items: _countries,
       details: {},
       fields: [
         {
@@ -131,12 +131,12 @@ export default {
       ]
     }
   },
-  created () {
-    _api.GetCountries.Get((response) => {
-      this.countries = response
-      this.items = response
-    })
-  },
+  // created () {
+  //   _api.GetCountries.Get((response) => {
+  //     this.countries = response
+  //     this.items = response
+  //   })
+  // },
   computed: {
     qtCountries () {
       return this.items.length
